@@ -1,4 +1,4 @@
-/* Reset some spacing */
+/* Reset spacing */
 body, h1, p {
     margin: 0;
     padding: 0;
@@ -37,7 +37,7 @@ body, h1, p {
 /* Page sections */
 section {
     padding: 100px 20px; /* Extra top padding so content doesn’t hide behind nav */
-    min-height: 100vh;
+    min-height: 50vh;
     background: #f5f5f5;
     border-bottom: 2px solid #ddd;
 }
@@ -73,4 +73,68 @@ section:nth-child(even) {
 
 .footer .social-links a:hover {
     color: white;
+}
+
+/* Contact Form Styling */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact label {
+    font-weight: bold;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+.contact-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #555;
+}
+
+#form-status {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.content-box {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+.content-box h2 {
+    margin-top: 0;
 }
