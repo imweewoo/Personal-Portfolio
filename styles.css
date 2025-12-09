@@ -1,12 +1,15 @@
 /* Section transitions */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    outline: 5px solid rgba(255,0,0,0.15);
 }
 
 section {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
+    width: 100%;
 }
 
 section.visible {
@@ -35,7 +38,7 @@ body, h1, p {
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -58,43 +61,117 @@ body, h1, p {
 @media (max-width: 768px) {
 
     .mobile-navbar {
-    display: inline;
+        display: flex;
 }
 
-    .hamburger {
-        position: fixed;       /* stays in place even when scrolling */
-        top: 20px;
-        right: 20px;           /* distance from right edge */
+    .mobile-container {
+        position: fixed;
+        top: 0;
+        right: -300px;     
+        width: 260px;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.95);  
+        backdrop-filter: blur(6px);
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+
         display: flex;
         flex-direction: column;
+        gap: 20px;
+
+        transition: right 0.35s ease-in-out;
+        z-index: 1500;
+    }
+
+    .hamburger {
+        position: fixed;
+        top: 16px;
+        right: 25px;
+
+        width: 40px;
+        height: 32px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         gap: 6px;
         cursor: pointer;
-        z-index: 3000;
-        opacity: 1;
+
+        z-index: 5000;   /* ALWAYS on top */
     }
 
     .hamburger span {
         width: 28px;
         height: 3px;
-        background: white;
-        transition: 0.3s;
+        background: black;
+        border-radius: 3px;
+        transition: 0.4s;
     }
 
     .navbar{
-    display: none;
+        display: none;
 }
+
+    .mobile-container.active {
+        right: 0;   /* SLIDE IN from right */
+}
+
+    .mobile-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+}
+
+    /* Each menu link */
+    .mobile-container ul li a {
+        display: block;
+        padding: 14px 10px;
+        font-size: 1.15rem;
+        color: #fdfdfd;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 8px;
+        letter-spacing: 0.5px;
+
+        transition: 0.25s ease;
+    }
+
+    /* Hover + tap effect */
+    .mobile-container ul li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(4px);
+    }
+
+    /* Divider styling */
+    .mobile-container ul li:not(:last-child) {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding-bottom: 6px;
+    }
+
+    .mobile-navbar, .mobile-container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 /* Page sections */
 section {
     padding: 100px 20px; /* Extra top padding so content doesn’t hide behind nav */
     min-height: 50vh;
+    width: 100%;
     background: #f5f5f5;
     border-bottom: 2px solid #ddd;
 }
 
 section:nth-child(even) {
     background: #e9e9e9;
+    width: 100%;
 }
 
 /* CV Download Styling */
@@ -159,7 +236,6 @@ section:nth-child(even) {
   background: white;
   padding: 15px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border: 1px solid #e5e5e5;
 }
 
@@ -174,6 +250,22 @@ section:nth-child(even) {
   transform: none;
 }
 
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        left: 20px; /* Move line to the left */
+    }
+
+    .timeline-item {
+        width: 90%;
+        left: 0 !important;
+        padding-left: 40px; /* indent so items don't hit the line */
+    }
+}
+
 /* Project Box Styling */
 .content-box {
     background: white;
@@ -181,7 +273,6 @@ section:nth-child(even) {
     margin: 20px auto;
     border-radius: 5px;
     max-width: 800px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
 }
 .content-box h2 {
@@ -190,7 +281,7 @@ section:nth-child(even) {
 
 /* Contact Form Styling */
 #contact form {
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -203,7 +294,7 @@ section:nth-child(even) {
 
 #contact input,
 #contact textarea {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     border: 2px solid #ccc;
     border-radius: 8px;
@@ -227,6 +318,7 @@ section:nth-child(even) {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 95%;
 }
 
 .contact-btn:hover {

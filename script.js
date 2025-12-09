@@ -18,11 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Mobile Navigation Toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-container");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("mobile-active");
+    hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        console.log("Hamburger clicked!");
+    });
 });
 
 // fade-in sections for timeline section
