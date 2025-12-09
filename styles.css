@@ -2,7 +2,6 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    outline: 5px solid rgba(255,0,0,0.15);
 }
 
 section {
