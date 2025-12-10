@@ -1,3 +1,66 @@
+/* Background CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0c192c;
+}
+
+.background-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -5000;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    z-index: -100;
+}
+
+.desktop-bubbles {
+    position: relative;
+    display: flex;
+    z-index: -100;
+}
+
+.bubbles span {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    aspect-ratio: 1 / 1;
+    background: #AAC4F5;
+    margin: 0 1px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #53629E,
+    0 0 50px #AAC4F5,
+    0 0 100px #AAC4F5;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #D78FEE;
+    box-shadow: 0 0 0 5px #9B5DE0,
+    0 0 50px #D78FEE,
+    0 0 100px #D78FEE;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
 /* Section transitions */
 html {
     scroll-behavior: smooth;
@@ -105,7 +168,7 @@ body, h1, p {
     .hamburger span {
         width: 28px;
         height: 3px;
-        background: black;
+        background: white;
         border-radius: 3px;
         transition: 0.4s;
     }
@@ -161,16 +224,17 @@ body, h1, p {
 
 /* Page sections */
 section {
-    padding: 100px 20px; /* Extra top padding so content doesn’t hide behind nav */
-    min-height: 50vh;
+    padding: 50px 20px; /* Extra top padding so content doesn’t hide behind nav */
     width: 100%;
-    background: #f5f5f5;
-    border-bottom: 2px solid #ddd;
 }
 
-section:nth-child(even) {
-    background: #e9e9e9;
-    width: 100%;
+#about h1, #about p{
+    color: white;
+}
+
+#about {
+    text-align: center;
+    padding: 100px 20px; /* Extra top padding so content doesn’t hide behind nav */
 }
 
 /* CV Download Styling */
@@ -189,6 +253,18 @@ section:nth-child(even) {
 
 .download-btn:hover {
     background-color: #e6b800;
+}
+
+.rounded-img {
+    width: 200px; 
+    height: 200px;
+    margin: 50px auto 30px; 
+    border-radius: 50%;
+    display: block;
+}
+
+#work {
+    color: white;
 }
 
 /* Timeline container */
@@ -236,6 +312,7 @@ section:nth-child(even) {
   padding: 15px 20px;
   border-radius: 8px;
   border: 1px solid #e5e5e5;
+  color: black;
 }
 
 .timeline-date {
@@ -265,6 +342,11 @@ section:nth-child(even) {
     }
 }
 
+/* Project Header Styling */
+#projects h1 {
+    color: white;
+}
+
 /* Project Box Styling */
 .content-box {
     background: white;
@@ -279,6 +361,10 @@ section:nth-child(even) {
 }
 
 /* Contact Form Styling */
+#contact h1 {
+    color: white;
+}
+
 #contact form {
     max-width: 90%;
     margin: 0 auto;
@@ -289,6 +375,7 @@ section:nth-child(even) {
 
 #contact label {
     font-weight: bold;
+    color: white;
 }
 
 #contact input,
