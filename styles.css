@@ -1,3 +1,16 @@
+/* Font Import */
+@font-face {
+    font-family: "Figtree";
+    src: url("Figtree-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Typewriter";
+    src: url("CutiveMono-Regular.ttf") format("truetype");
+}
+
 /* Background CSS */
 * {
     margin: 0;
@@ -88,13 +101,13 @@ body, h1, p {
 
 /* Desktop Nav Bar */
 .navbar {
-    position: fixed;     /* Keeps it floating */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #333;
     padding: 10px 0;
-    z-index: 1000;       /* Ensures it appears above page sections */
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -102,6 +115,7 @@ body, h1, p {
     display: flex;
     justify-content: center;
     gap: 15px;
+    font-family: Figtree;
 }
 
 .navbar a {
@@ -162,7 +176,7 @@ body, h1, p {
         gap: 6px;
         cursor: pointer;
 
-        z-index: 5000;   /* ALWAYS on top */
+        z-index: 5000;
     }
 
     .hamburger span {
@@ -178,7 +192,7 @@ body, h1, p {
 }
 
     .mobile-container.active {
-        right: 0;   /* SLIDE IN from right */
+        right: 0; 
 }
 
     .mobile-container ul {
@@ -188,9 +202,10 @@ body, h1, p {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        font-family: Figtree;
 }
 
-    /* Each menu link */
+
     .mobile-container ul li a {
         display: block;
         padding: 14px 10px;
@@ -204,13 +219,13 @@ body, h1, p {
         transition: 0.25s ease;
     }
 
-    /* Hover + tap effect */
+
     .mobile-container ul li a:hover {
         background: rgba(255, 255, 255, 0.1);
         transform: translateX(4px);
     }
 
-    /* Divider styling */
+
     .mobile-container ul li:not(:last-child) {
         border-bottom: 1px solid rgba(255,255,255,0.08);
         padding-bottom: 6px;
@@ -224,17 +239,25 @@ body, h1, p {
 
 /* Page sections */
 section {
-    padding: 50px 20px; /* Extra top padding so content doesn’t hide behind nav */
+    padding: 50px 20px; 
     width: 100%;
 }
 
-#about h1, #about p{
+#about h1{
     color: white;
+    font-family: Figtree, Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+#about p {
+    color: white;
+    font-family: Typewriter, Arial, Helvetica, sans-serif;
+    font-size: 20px
 }
 
 #about {
     text-align: center;
-    padding: 100px 20px; /* Extra top padding so content doesn’t hide behind nav */
+    padding: 100px 20px; 
 }
 
 /* CV Download Styling */
@@ -249,6 +272,7 @@ section {
     text-decoration: none;
     border-radius: 8px;
     transition: background 0.3s ease;
+    font-family: Figtree;
 }
 
 .download-btn:hover {
@@ -263,8 +287,23 @@ section {
     display: block;
 }
 
-#work {
+#work h3{
     color: white;
+    font-family: Figtree;
+    font-size: 15px;
+    font-style: italic
+}
+
+#work h1{
+    color: white;
+    font-family: Figtree;
+    font-size: 50px;
+}
+
+#work p{
+    color: white;
+    font-family: Typewriter;
+    font-size: 20px;
 }
 
 /* Timeline container */
@@ -275,7 +314,7 @@ section {
   padding: 0 20px;
 }
 
-/* The vertical line */
+/* Line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -287,7 +326,6 @@ section {
   background: #ddd;
 }
 
-/* Each timeline item */
 .timeline-item {
   position: relative;
   width: 50%;
@@ -297,8 +335,6 @@ section {
   transition: all 0.6s ease-out;
 }
 
-/* Left vs right side items alternate maybe */
-/* For simplicity, all on same side — but you can alternate with nth-child */
 .timeline-item:nth-child(odd) {
   left: -80px;
 }
@@ -306,45 +342,65 @@ section {
   left: 50%;
 }
 
-/* Content box inside each item */
 .timeline-content {
   background: white;
   padding: 15px 20px;
   border-radius: 8px;
   border: 1px solid #e5e5e5;
-  color: black;
+}
+
+#work .timeline-content h3 {
+    color: black;
+    font-family: Figtree;
+    font-size: 20px
+}
+
+#work .timeline-content p {
+    color: black;
+    font-family: Typewriter;
+    font-size: 15px;
 }
 
 .timeline-date {
   font-size: 0.9rem;
   color: #777;
+  font-family: Figtree;
 }
 
-/* When item becomes visible (e.g. via JS), show it */
+.timeline-content ul {
+   color: black;
+    font-family: Typewriter;
+    font-size: 15px; 
+}
+
 .timeline-item.visible {
   opacity: 1;
   transform: none;
 }
 
+/* Mobile Reformatting */
 @media (max-width: 768px) {
     .timeline {
         padding-left: 20px;
     }
 
     .timeline::before {
-        left: 20px; /* Move line to the left */
+        left: 20px; 
     }
 
     .timeline-item {
         width: 90%;
         left: 0 !important;
-        padding-left: 40px; /* indent so items don't hit the line */
+        padding-left: 40px; 
+        color: black;
     }
 }
 
 /* Project Header Styling */
 #projects h1 {
     color: white;
+    font-family: Figtree;
+    font-size: 50px;
 }
 
 /* Project Box Styling */
@@ -358,11 +414,18 @@ section {
 }
 .content-box h2 {
     margin-top: 0;
+    font-family: Figtree;
+}
+
+.content-box p {
+    font-family: Typewriter;
 }
 
 /* Contact Form Styling */
 #contact h1 {
     color: white;
+    font-family: Figtree;
+    font-size: 50px;
 }
 
 #contact form {
@@ -376,6 +439,7 @@ section {
 #contact label {
     font-weight: bold;
     color: white;
+    font-family: Typewriter;
 }
 
 #contact input,
@@ -405,6 +469,7 @@ section {
     cursor: pointer;
     transition: background 0.3s ease;
     width: 95%;
+    font-family: Figtree;
 }
 
 .contact-btn:hover {

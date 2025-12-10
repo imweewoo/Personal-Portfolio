@@ -24,11 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hamburger.addEventListener("click", () => {
         mobileMenu.classList.toggle("active");
-        console.log("Hamburger clicked!");
     });
 });
 
-// fade-in sections for timeline section
+// fade-in for timeline section
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section, .timeline-item");
 
@@ -69,3 +68,4 @@ form.addEventListener("submit", async (e) => {
         status.style.color = "red";
     }
 });
+
