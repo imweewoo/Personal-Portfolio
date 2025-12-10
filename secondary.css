@@ -1,14 +1,14 @@
 /* Font Import */
 @font-face {
     font-family: "Figtree";
-    src: url("Figtree-VariableFont_wght.ttf") format("truetype");
+    src: url("fonts/Figtree-VariableFont_wght.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Typewriter";
-    src: url("CutiveMono-Regular.ttf") format("truetype");
+    src: url("fonts/CutiveMono-Regular.ttf") format("truetype");
 }
 
 
